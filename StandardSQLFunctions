@@ -1,0 +1,17 @@
+--EXERCISE--
+
+For each slogan, show the following sentence (name the column: sentence):
+
+The copywriter of the slogan with ID X is Y Z.
+In this sentence, X is the id of the slogan, and Y and Z are the first and last name of the copywriter, respectively.
+
+--CODE-- 
+
+SELECT 'The copywriter of the slogan with ID' || ' ' || s.id || ' ' || 'is' || ' ' ||
+c.first_name || ' ' || c.last_name||'.' AS sentence
+
+FROM slogan s 
+
+INNER JOIN copywriter c
+
+ON s.copywriter_id = c.id;
