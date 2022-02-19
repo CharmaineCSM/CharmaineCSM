@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @CharmaineCSM
-- 👀 I’m interested in coding SQL
-- 🌱 I’m currently learning how to master the code of SQL
+- 👀 I’m interested in coding SQL and expanding my data analytic skills
+- 🌱 I’m currently learning to master the coding of SQL 
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
