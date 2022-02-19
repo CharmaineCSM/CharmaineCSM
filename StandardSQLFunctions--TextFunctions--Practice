@@ -5,11 +5,11 @@ For each slogan, print the following: 'X. Y', where X is the item name and Y is 
 --CODE--
 
 SELECT
-i.name||'.' ||' '||s.text 
+i.name||'.' ||' '||s.text  --i stands for item table, s stands for slogan table
 AS name_text
 
 FROM item i 
 
-INNER JOIN logan s  --To join table i and table s on the common attribute
+INNER JOIN slogan s  --To join table i and table s on the common attribute
 
 ON i.id = s.item_id; 
