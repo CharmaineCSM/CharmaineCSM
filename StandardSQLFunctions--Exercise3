@@ -1,0 +1,17 @@
+--EXERCISE--
+
+For each 'tv commercial' slogan, show the item name, the item type, and the text with each period (.) turned into three exclamation marks (!!!) – name this column changed_text.
+
+--CODE--
+
+SELECT
+i.name,
+i.type, 
+replace(s.text, '.', '!!!') AS changed_text 
+
+FROM item i
+
+LEFT JOIN slogan s
+ON i.id = s.item_id
+
+WHERE s.type = 'tv commercial';
