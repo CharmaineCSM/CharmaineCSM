@@ -1,0 +1,14 @@
+--EXERCISE--
+
+For each slogan, show the item name and the slogan with all the periods (.) replaced by exclamation marks (!). Name the second column changed_text.
+
+--CODE-- 
+
+SELECT 
+i.name, 
+replace(s.text, '.', '!') as changed_text
+
+FROM item i
+
+INNER JOIN slogan s     --To join two tables into one by their common attribute-- 
+On i.id = s.item_id;
