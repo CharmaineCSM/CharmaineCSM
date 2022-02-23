@@ -1,0 +1,18 @@
+--EXERCISE-- 
+
+Show the names of all pieces of art together with the names of their creators and the names of the museums that house these pieces of art in their collections. 
+Omit lost works and pieces of art with an unknown artist. Name the columns piece_of_art_name, artist_name, and museum_name.
+
+--CODE--
+
+SELECT
+  p.name AS piece_of_art_name,
+  a.name AS artist_name, 
+  m.name AS museum_name
+
+FROM piece_of_art p
+
+JOIN museum m
+	ON p.museum_id = m.id
+JOIN artist a
+	ON p.artist_id = a.id;
