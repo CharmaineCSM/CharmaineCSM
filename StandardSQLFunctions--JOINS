@@ -1,0 +1,19 @@
+--EXERCISE--
+
+For each artist who lived for more than 50 years and was born after the year 1800, 
+show their name and the name of the pieces of art they created. Rename columns to artist_name and piece_name, respectively.
+
+--CODE--
+
+SELECT
+  a.name AS artist_name,
+  p.name AS piece_name
+
+FROM artist a 
+
+JOIN piece_of_art p 
+  ON a.id = p.artist_id
+
+WHERE(death_year - birth_year) > 50 
+  AND birth_year > 1800;
+
