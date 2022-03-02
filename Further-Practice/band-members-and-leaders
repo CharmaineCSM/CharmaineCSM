@@ -1,0 +1,14 @@
+--EXERCISE--
+
+Show the nickname of each band member (name the column member) and the nickname of their leader (name the column leader) in the same row.
+
+--CODE--
+
+SELECT
+b1.nickname AS member, 
+b2.nickname as leader
+
+FROM band_members b1
+
+JOIN band_members b2
+	ON b1.band_leader_id = b2.id;
