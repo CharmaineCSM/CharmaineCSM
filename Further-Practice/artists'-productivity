@@ -1,0 +1,18 @@
+--EXERCISE--
+Show the names of artists together with the number of years they lived (name the column years_lived) 
+and the number of pieces they created (name the column number_of_created). Only show artists who created at least one piece of art.
+
+--CODE--
+
+SELECT 
+a.name,
+a.death_year-a.birth_year AS years_lived,
+COUNT(pa.name) AS number_of_created
+
+FROM artist a
+
+JOIN piece_of_art pa
+	ON a.id = pa.artist_id
+
+GROUP BY a.name, a.death_year, a.birth_year
+HAVING count(pa.name) >= 1;
