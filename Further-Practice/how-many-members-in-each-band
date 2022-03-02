@@ -1,0 +1,18 @@
+--EXERCISE--
+
+Show the nickname of the leader of each band, together with the corresponding band_id and the number of members the band has (name this column members_count).
+
+--CODE--
+
+SELECT 
+b1.nickname,
+b2.band_id,
+COUNT(b2.band_id) AS members_count
+
+FROM band_members b1
+
+JOIN band_members b2 
+	ON b1.id = b2.band_leader_id
+
+GROUP BY
+b1.nickname, b2.band_id;
