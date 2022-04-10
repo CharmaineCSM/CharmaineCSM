@@ -1,0 +1,21 @@
+--Exercise--
+
+Select the name of each product category and the revenue (name that column revenue) that it generated. 
+Sort the results by revenue in descending order.
+
+Show a product category even if there were no sales for a particular category. In this case, the revenue is null.
+
+--Solution--
+SELECT cat.name, 
+SUM(oi.price) AS revenue
+
+From categories cat 
+
+LEFT JOIN products p  --Use left join because we need to display the nulls of products with no sales 
+ON cat.id = p.category_id
+
+LEFT JOIN order_items oi 
+ON oi.product_id = p.id
+
+GROUP BY 1 --group by the first column, which is category names
+ORDER BY revenue desc
