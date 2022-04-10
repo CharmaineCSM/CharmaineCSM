@@ -1,0 +1,18 @@
+--Exercise--
+
+Select the first name, last name, salary and salary grade of employees whose salary fits between the lower_limit and upper_limit from the salgrade table.
+
+--Solution--
+
+SELECT
+e.first_name,
+e.last_name,
+e.salary,
+s.grade
+
+FROM employee as e
+
+INNER JOIN salgrade as s
+ON e.salary BETWEEN s.lower_limit AND s.upper_limit    
+
+--eventhough the 2 tables does not have a common column to join, ON can also be used to compare between 2 tabes. :D
